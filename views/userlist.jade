@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    h1.
+        User List
+    a(href="/newuser") Add User
+
+    table
+        tr
+            td No
+            td User name
+            td Email
+            td Delete
+            td Edit
+
+        each user, i in userlist
+            tr
+                td #{i+1}
+                td #{user.username}
+                td #{user.email}
+                td 
+                    a(href="/deluser/#{user._id}") Delete
+                td
+                    a(href="/edituser/#{user._id}") Edit
